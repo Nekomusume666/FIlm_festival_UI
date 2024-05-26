@@ -1,1 +1,24 @@
-[{"NameGuest":"фы","LastNameGuest":"ыф","SeatNumberGuest":18,"EmailGuest":"123@inbox.ru","isVoted":false,"votes_dict":null},{"NameGuest":"sasa","LastNameGuest":"asasa","SeatNumberGuest":19,"EmailGuest":"222@inbox.ru","isVoted":false,"votes_dict":null}]
+[
+  {
+    "NameGuest": "123",
+    "LastNameGuest": "sda",
+    "SeatNumberGuest": 18,
+    "EmailGuest": "1@inbox.ru",
+    "isVoted": false,
+    "votes_dict": {
+      "1f": 1,
+      "2f": 1
+    }
+  },
+  {
+    "NameGuest": "ddas",
+    "LastNameGuest": "4334",
+    "SeatNumberGuest": 19,
+    "EmailGuest": "22@inbox.ru",
+    "isVoted": false,
+    "votes_dict": {
+      "1f": 1,
+      "2f": 1
+    }
+  }
+]

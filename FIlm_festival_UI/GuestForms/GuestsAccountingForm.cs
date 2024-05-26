@@ -64,9 +64,11 @@ namespace FIlm_festival_UI
             string lastNameGuestForm = AddGuestForm.LastNameGuestForm;
             int seatNumberGuestForm = AddGuestForm.SeatNumberGuestForm;
             string emailGuestForm = AddGuestForm.EmailGuestForm;
+            bool vote = false;
+            Dictionary<string, int> dict = new Dictionary<string, int>();
 
             Guests newGuest = new Guests(nameGuestForm,
-                lastNameGuestForm, emailGuestForm, seatNumberGuestForm);
+                lastNameGuestForm, emailGuestForm, seatNumberGuestForm, vote, dict);
 
             if (!string.IsNullOrEmpty(nameGuestForm) &&
                 !string.IsNullOrEmpty(lastNameGuestForm) &&
@@ -259,6 +261,21 @@ namespace FIlm_festival_UI
             string surname = selectedRow.Cells[1].Value.ToString();
             string email = selectedRow.Cells[2].Value.ToString();
             int seatNumber = Convert.ToInt32(selectedRow.Cells[3].Value);
+            bool vote;
+            if (selectedRow.Cells[4].Value.Equals("+")) vote = true;
+            else vote = false;
+            Dictionary<string,int> dict = new Dictionary<string,int>();
+
+            var guests = await ReadFromFile<Guests>(FileGuest);
+
+            foreach (var guest in guests)
+            {
+                if (guest.NameGuest.Equals(name))
+                {
+                    dict = guest.votes_dict;
+                }
+            }
+
 
             ChangeGuestForm guestForm = new ChangeGuestForm(name, surname, email, seatNumber);
             guestForm.ShowDialog();
@@ -267,11 +284,12 @@ namespace FIlm_festival_UI
             string modSurname = ChangeGuestForm.LastNameGuestForm;
             string modEmail = ChangeGuestForm.EmailGuestForm;
             int modNumberPlace = ChangeGuestForm.SeatNumberGuestForm;
+       
 
             Guests modifiedParticipant = new Guests(modName,
-                modSurname, modEmail, modNumberPlace);
+                modSurname, modEmail, modNumberPlace, vote, dict);
 
-            var guests = await ReadFromFile<Guests>(FileGuest);
+            
 
             foreach (var g in guests)
             {

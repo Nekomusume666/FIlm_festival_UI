@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace FIlm_festival_UI.GuestForms
 {
@@ -34,6 +35,7 @@ namespace FIlm_festival_UI.GuestForms
         int numbersFilm = 0;
         int countFilm = 0;
 
+        private Dictionary<string, int> copiedDict;
 
         public VotingGuestForm(Guests guest)
         {
@@ -42,6 +44,7 @@ namespace FIlm_festival_UI.GuestForms
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
 
             curGuest = guest;
+            copiedDict = guest.votes_dict;
         }
 
         private async void VotingGuestForm_Load(object sender, EventArgs e)
@@ -49,6 +52,7 @@ namespace FIlm_festival_UI.GuestForms
             Title_of_current_page.Text = Title_of_current_page.Text + curGuest.NameGuest;
 
             dataGridView.AllowUserToAddRows = false;
+
             if (File.Exists(FileFilm))
             {
                 var tableOfFilms = await ReadFromFile<Film>(FileFilm);
@@ -57,6 +61,19 @@ namespace FIlm_festival_UI.GuestForms
 
                 if (tableOfFilms != null)
                 {
+
+                    foreach (var film in tableOfFilms)
+                    {
+                        foreach (var vote in curGuest.votes_dict)
+                        {
+                            if (film.NameFilm.Equals(vote.Key))
+                            {
+                                film.GuestsAmount--;
+                                film.GuestsVotes -= vote.Value;
+                            }
+                        }
+                    }
+
                     foreach (var film in tableOfFilms)
                     {
                         dataGridView.Rows.Add();
@@ -107,8 +124,23 @@ namespace FIlm_festival_UI.GuestForms
             }
         }
 
-        private void button_cancel_Click(object sender, EventArgs e)
+        private async void button_cancel_Click(object sender, EventArgs e)
         {
+            //if (File.Exists(FileFilm))
+            //{
+            //    var tableOfFilms = await ReadFromFile<Film>(FileFilm);
+            //    foreach (var film in tableOfFilms)
+            //    {
+            //        foreach (var vote in curGuest.votes_dict)
+            //        {
+            //            if (film.NameFilm.Equals(vote.Key))
+            //            {
+            //                film.GuestsAmount++;
+            //                film.GuestsVotes += vote.Value;
+            //            }
+            //        }
+            //    }
+            //}
             Close();
         }
 
@@ -170,10 +202,83 @@ namespace FIlm_festival_UI.GuestForms
             var tableOfFilms = await ReadFromFile<Film>(FileFilm);
             foreach (var film in tableOfFilms)
             {
-                //film.GuestsVotes +=
+                foreach (var item in curGuest.votes_dict)
+                {
+                    if (film.NameFilm.Equals(item.Key))
+                    {
+                        film.GuestsVotes -= item.Value;
+                        film.GuestsAmount--;
+                        break;
+                    }
+                }
+
+                for (int i = 0; i < dataGridView.RowCount; i++)
+                {
+                    if (film.NameFilm.Equals(dataGridView.Rows[i].Cells[0].Value.ToString()))
+                    {
+                        film.GuestsVotes += int.Parse(dataGridView.Rows[i].Cells[1].Value.ToString());
+                        film.GuestsAmount++;
+                        break;
+                    }
+                }
+            }
+            await WriteToFile(tableOfFilms, FileFilm);
+
+            Console.WriteLine("debug");
+
+            curGuest.votes_dict.Clear();
+            for (int i = 0; i < dataGridView.RowCount; i++)
+            {
+                curGuest.votes_dict.Add(dataGridView.Rows[i].Cells[0].Value.ToString(), Int32.Parse(dataGridView.Rows[i].Cells[1].Value.ToString()));
+            }
+            // Чтение JSON-файла
+            var json = File.ReadAllText(FileGuest);
+            var guests = JsonConvert.DeserializeObject<List<Guests>>(json);
+
+            // Поиск гостя по email
+            var guest = guests.Find(g => g.NameGuest == curGuest.NameGuest);
+            if (guest != null)
+            {
+                // Обновление информации о госте
+                Core.DictionaryExtensions.AddRange(guest.votes_dict, curGuest.votes_dict);
+                UpdateGuestInfo(FileGuest, curGuest.NameGuest, guest =>
+                {
+                    guest.NameGuest = curGuest.NameGuest;
+                    guest.LastNameGuest = curGuest.LastNameGuest;
+                    guest.SeatNumberGuest = curGuest.SeatNumberGuest;
+                    guest.isVoted = true;
+                });
+
+                // Сохранение обновленного списка гостей обратно в JSON-файл
+                var updatedJson = JsonConvert.SerializeObject(guests, Formatting.Indented);
+                File.WriteAllText(FileGuest, updatedJson);
             }
 
-             Close();
+
+            Close();
+        }
+
+        public void UpdateGuestInfo(string filePath, string name, Action<Guests> updateAction)
+        {
+            // Чтение JSON-файла
+            var json = File.ReadAllText(filePath);
+            var guests = JsonConvert.DeserializeObject<List<Guests>>(json);
+
+            // Поиск гостя по email
+            var guest = guests.Find(g => g.NameGuest == name);
+            if (guest != null)
+            {
+                // Обновление информации о госте
+                updateAction(guest);
+
+                // Сохранение обновленного списка гостей обратно в JSON-файл
+                var updatedJson = JsonConvert.SerializeObject(guests, Formatting.Indented);
+                File.WriteAllText(filePath, updatedJson);
+            }
+            else
+            {
+                Console.WriteLine("Гость с указанным name не найден.");
+            }
         }
     }
 }

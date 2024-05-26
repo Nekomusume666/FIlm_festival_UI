@@ -17,13 +17,14 @@ namespace course_work_FestivalFilmov_Afonin
         public Dictionary<string, int> votes_dict { get; set; }
 
 
-        public Guests(string nameGuest, string lastNameGuest, string emailGuest,int seatNumberGuest)
+        public Guests(string nameGuest, string lastNameGuest, string emailGuest,int seatNumberGuest, bool vote, Dictionary<string, int> dict)
         {
             NameGuest = nameGuest;
             LastNameGuest = lastNameGuest;
             EmailGuest = emailGuest;
             SeatNumberGuest = seatNumberGuest;
-            isVoted = false;
+            isVoted = vote;
+            votes_dict = dict;
         }
     }
 }
