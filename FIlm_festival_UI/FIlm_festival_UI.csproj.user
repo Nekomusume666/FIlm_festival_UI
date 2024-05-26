@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="FilmForms\AddFilmForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GuestForms\VotingGuestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="JuryForms\AddJuryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GuestForms\AddGuestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FilmForms\ChangeFilmForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="JuryForms\ChangeJuryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GuestForms\ChangeGuestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FilmForms\FIlmАccountingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ResultsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="JuryForms\JuryAccountingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GuestForms\GuestsAccountingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
