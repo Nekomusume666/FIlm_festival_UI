@@ -99,10 +99,11 @@ namespace FIlm_festival_UI
                                     maxGuestName.Clear();
                                     maxGuestName.Add(dataGridView.Rows[i].Cells[0].Value.ToString());
                                 }
-                                if (maxGuest == current)
+                                else if (maxGuest == current)
                                 {
                                     maxGuestName.Add(dataGridView.Rows[i].Cells[0].Value.ToString());
                                 }
+
 
                                 //jurys
                                 double currentJ = double.Parse(dataGridView.Rows[i].Cells[1].Value.ToString());
@@ -112,7 +113,7 @@ namespace FIlm_festival_UI
                                     maxJuryName.Clear();
                                     maxJuryName.Add(dataGridView.Rows[i].Cells[0].Value.ToString());
                                 }
-                                if (maxJury == currentJ)
+                                else if (maxJury == currentJ)
                                 {
                                     maxJuryName.Add(dataGridView.Rows[i].Cells[0].Value.ToString());
                                 }
@@ -128,6 +129,21 @@ namespace FIlm_festival_UI
                             maxJury = double.Parse(dataGridView.Rows[0].Cells[1].Value.ToString());
                             maxJuryName.Add(dataGridView.Rows[0].Cells[0].Value.ToString());
 
+                        }
+
+
+
+
+                        for (int i = 0; i < dataGridView.RowCount; i++)
+                        {
+                            if (!double.IsRealNumber(double.Parse(dataGridView.Rows[i].Cells[1].Value.ToString())))
+                            {
+                                dataGridView.Rows[i].Cells[1].Value = "-";
+                            }
+                            if (!double.IsRealNumber(double.Parse(dataGridView.Rows[i].Cells[2].Value.ToString())))
+                            {
+                                dataGridView.Rows[i].Cells[2].Value = "-";
+                            }
                         }
 
                         //guests

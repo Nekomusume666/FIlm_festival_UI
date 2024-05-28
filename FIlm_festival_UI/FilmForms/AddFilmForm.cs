@@ -29,7 +29,6 @@ namespace FIlm_festival_UI
         public static string NameFilmForm = "";
         public static string NominationFilmForm = "";
         public static int TicketPriceForm = 0;
-        public static string RatingFilmForm = "";
 
 
         public AddFilmForm()
@@ -54,7 +53,6 @@ namespace FIlm_festival_UI
             {
                 NameFilmForm = textBox_name.Text;
                 NominationFilmForm = comboBox_nomination.SelectedItem as string;
-                RatingFilmForm = comboBox_rating.SelectedItem as string;
                 TicketPriceForm = (int)numericUpDown_cost.Value;
 
                 Close();
@@ -100,20 +98,6 @@ namespace FIlm_festival_UI
             {
                 e.Cancel = false;
                 errorProvider_cost.SetError(numericUpDown_cost, "");
-            }
-        }
-
-        private void comboBox_rating_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(comboBox_rating.Text))
-            {
-                e.Cancel = true;
-                errorProvider_rating.SetError(comboBox_rating, "Выберите оценку фильма!");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider_rating.SetError(comboBox_rating, "");
             }
         }
 

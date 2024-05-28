@@ -32,8 +32,6 @@
             comboBox_nomination = new ComboBox();
             button_cancel = new Button();
             btn_change = new Button();
-            comboBox_rating = new ComboBox();
-            label_rating = new Label();
             numericUpDown_cost = new NumericUpDown();
             label_cost = new Label();
             label_nomination = new Label();
@@ -58,8 +56,8 @@
             comboBox_nomination.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox_nomination.FormattingEnabled = true;
             errorProvider_nomination.SetIconPadding(comboBox_nomination, 10);
-            comboBox_nomination.Items.AddRange(new object[] { "Самый романтичный", "Самый смешной" });
-            comboBox_nomination.Location = new Point(315, 116);
+            comboBox_nomination.Items.AddRange(new object[] { "Самый романтичный", "Самый смешной", "Лучший боевик", "Самый страшный" });
+            comboBox_nomination.Location = new Point(315, 163);
             comboBox_nomination.Name = "comboBox_nomination";
             comboBox_nomination.Size = new Size(328, 36);
             comboBox_nomination.TabIndex = 24;
@@ -97,37 +95,12 @@
             btn_change.UseVisualStyleBackColor = false;
             btn_change.Click += btn_change_Click;
             // 
-            // comboBox_rating
-            // 
-            comboBox_rating.BackColor = Color.FromArgb(188, 166, 147);
-            comboBox_rating.FlatStyle = FlatStyle.Popup;
-            comboBox_rating.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox_rating.FormattingEnabled = true;
-            errorProvider_rating.SetIconPadding(comboBox_rating, 10);
-            comboBox_rating.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" });
-            comboBox_rating.Location = new Point(315, 235);
-            comboBox_rating.Name = "comboBox_rating";
-            comboBox_rating.Size = new Size(328, 36);
-            comboBox_rating.TabIndex = 21;
-            comboBox_rating.Validating += comboBox_rating_Validating;
-            // 
-            // label_rating
-            // 
-            label_rating.AutoSize = true;
-            label_rating.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label_rating.ForeColor = Color.FromArgb(11, 16, 12);
-            label_rating.Location = new Point(130, 241);
-            label_rating.Name = "label_rating";
-            label_rating.Size = new Size(81, 25);
-            label_rating.TabIndex = 20;
-            label_rating.Text = "Оценка";
-            // 
             // numericUpDown_cost
             // 
             numericUpDown_cost.BackColor = Color.FromArgb(188, 166, 147);
             numericUpDown_cost.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             errorProvider_cost.SetIconPadding(numericUpDown_cost, 10);
-            numericUpDown_cost.Location = new Point(315, 180);
+            numericUpDown_cost.Location = new Point(315, 227);
             numericUpDown_cost.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             numericUpDown_cost.Minimum = new decimal(new int[] { 100, 0, 0, 0 });
             numericUpDown_cost.Name = "numericUpDown_cost";
@@ -141,7 +114,7 @@
             label_cost.AutoSize = true;
             label_cost.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             label_cost.ForeColor = Color.FromArgb(11, 16, 12);
-            label_cost.Location = new Point(130, 185);
+            label_cost.Location = new Point(130, 232);
             label_cost.Name = "label_cost";
             label_cost.Size = new Size(130, 25);
             label_cost.TabIndex = 18;
@@ -152,7 +125,7 @@
             label_nomination.AutoSize = true;
             label_nomination.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             label_nomination.ForeColor = Color.FromArgb(11, 16, 12);
-            label_nomination.Location = new Point(130, 122);
+            label_nomination.Location = new Point(130, 169);
             label_nomination.Name = "label_nomination";
             label_nomination.Size = new Size(119, 25);
             label_nomination.TabIndex = 17;
@@ -163,7 +136,7 @@
             textBox_name.BackColor = Color.FromArgb(188, 166, 147);
             textBox_name.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             errorProvider_name.SetIconPadding(textBox_name, 10);
-            textBox_name.Location = new Point(315, 63);
+            textBox_name.Location = new Point(315, 110);
             textBox_name.Name = "textBox_name";
             textBox_name.Size = new Size(328, 34);
             textBox_name.TabIndex = 16;
@@ -174,7 +147,7 @@
             label_name.AutoSize = true;
             label_name.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             label_name.ForeColor = Color.FromArgb(11, 16, 12);
-            label_name.Location = new Point(130, 69);
+            label_name.Location = new Point(130, 116);
             label_name.Name = "label_name";
             label_name.Size = new Size(99, 25);
             label_name.TabIndex = 15;
@@ -218,8 +191,6 @@
             Controls.Add(comboBox_nomination);
             Controls.Add(button_cancel);
             Controls.Add(btn_change);
-            Controls.Add(comboBox_rating);
-            Controls.Add(label_rating);
             Controls.Add(numericUpDown_cost);
             Controls.Add(label_cost);
             Controls.Add(label_nomination);
@@ -246,8 +217,6 @@
         private ComboBox comboBox_nomination;
         private Button button_cancel;
         private Button btn_change;
-        private ComboBox comboBox_rating;
-        private Label label_rating;
         private NumericUpDown numericUpDown_cost;
         private Label label_cost;
         private Label label_nomination;

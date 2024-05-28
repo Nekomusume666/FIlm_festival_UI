@@ -44,7 +44,6 @@
             NameOfFilm = new DataGridViewTextBoxColumn();
             NominationOfFilm = new DataGridViewTextBoxColumn();
             CostOfTicket = new DataGridViewTextBoxColumn();
-            RatingOfFilm = new DataGridViewTextBoxColumn();
             nav_bar_panel.SuspendLayout();
             filter_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)film_dataGridView).BeginInit();
@@ -196,7 +195,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             film_dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             film_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            film_dataGridView.Columns.AddRange(new DataGridViewColumn[] { NameOfFilm, NominationOfFilm, CostOfTicket, RatingOfFilm });
+            film_dataGridView.Columns.AddRange(new DataGridViewColumn[] { NameOfFilm, NominationOfFilm, CostOfTicket });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(11, 16, 12);
             dataGridViewCellStyle2.Font = new Font("Nirmala UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -241,13 +240,6 @@
             CostOfTicket.Name = "CostOfTicket";
             CostOfTicket.ReadOnly = true;
             // 
-            // RatingOfFilm
-            // 
-            RatingOfFilm.HeaderText = "Оценка фильма";
-            RatingOfFilm.MinimumWidth = 6;
-            RatingOfFilm.Name = "RatingOfFilm";
-            RatingOfFilm.ReadOnly = true;
-            // 
             // FIlmАccountingForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -273,10 +265,6 @@
         private Label Title_of_current_page;
         private Panel panel_green;
         private DataGridView film_dataGridView;
-        private DataGridViewTextBoxColumn NameOfFilm;
-        private DataGridViewTextBoxColumn NominationOfFilm;
-        private DataGridViewTextBoxColumn CostOfTicket;
-        private DataGridViewTextBoxColumn RatingOfFilm;
         private Label label_CountOfFilms;
         private Button btn_add_film;
         private Button btn_delete;
@@ -284,5 +272,8 @@
         private ComboBox comboBox_filter;
         private TextBox textBox_filter;
         private Label label_filter;
+        private DataGridViewTextBoxColumn NameOfFilm;
+        private DataGridViewTextBoxColumn NominationOfFilm;
+        private DataGridViewTextBoxColumn CostOfTicket;
     }
 }

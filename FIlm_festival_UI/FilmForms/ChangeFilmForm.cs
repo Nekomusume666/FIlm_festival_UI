@@ -15,15 +15,13 @@ namespace FIlm_festival_UI
         public static string NameFilmForm = "";
         public static string NominationFilmForm = "";
         public static int TicketPriceForm = 0;
-        public static string RatingFilmForm = "";
 
-        public ChangeFilmForm(string name, string nomination, int price, string rating)
+        public ChangeFilmForm(string name, string nomination, int price)
         {
             InitializeComponent();
             NameFilmForm = name;
             NominationFilmForm = nomination;
             TicketPriceForm = price;
-            RatingFilmForm = rating;
             FillData();
         }
         private void FillData()
@@ -31,7 +29,6 @@ namespace FIlm_festival_UI
             textBox_name.Text = NameFilmForm;
             comboBox_nomination.SelectedIndex = NameFilmForm.Equals("Самый романтичный") ? 0 : 1;
             numericUpDown_cost.Value = TicketPriceForm;
-            comboBox_rating.SelectedItem = RatingFilmForm;
         }
 
 
@@ -51,7 +48,6 @@ namespace FIlm_festival_UI
             {
                 NameFilmForm = textBox_name.Text;
                 NominationFilmForm = comboBox_nomination.SelectedItem as string;
-                RatingFilmForm = comboBox_rating.SelectedItem as string;
                 TicketPriceForm = (int)numericUpDown_cost.Value;
 
                 Close();
@@ -100,18 +96,5 @@ namespace FIlm_festival_UI
             }
         }
 
-        private void comboBox_rating_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(comboBox_rating.Text))
-            {
-                e.Cancel = true;
-                errorProvider_rating.SetError(comboBox_rating, "Выберите оценку фильма!");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider_rating.SetError(comboBox_rating, "");
-            }
-        }
     }
 }

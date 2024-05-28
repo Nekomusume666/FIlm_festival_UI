@@ -67,6 +67,7 @@
             nav_bar_panel.Name = "nav_bar_panel";
             nav_bar_panel.Size = new Size(996, 144);
             nav_bar_panel.TabIndex = 7;
+            nav_bar_panel.Paint += nav_bar_panel_Paint;
             // 
             // btn_voting
             // 

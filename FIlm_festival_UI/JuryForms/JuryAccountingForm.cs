@@ -90,7 +90,7 @@ namespace FIlm_festival_UI
 
                     await WriteToFile(jurys, FileJury);
 
-                    dataGridView.Rows.Add(nameJuryForm, lastNameJuryForm, postJuryForm);
+                    dataGridView.Rows.Add(nameJuryForm, lastNameJuryForm, postJuryForm, "-");
                     MessageBox.Show($"Член жюри {nameJuryForm} успешно добавлен в базу " +
                            $"Фестиваль фильмов. ", "Добавление члена жюри", 0,
                            MessageBoxIcon.Information);
@@ -314,6 +314,11 @@ namespace FIlm_festival_UI
             {
                 MessageBox.Show("Необходимо выбрать гостя!");
             }
+        }
+
+        private void nav_bar_panel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -11,7 +11,6 @@ namespace course_work_FestivalFilmov_Afonin
         public string NameFilm { get; set; }  //название фильма
         public string NominationFilm { get; set; }  //номинация фильма(самый романтичный, смешной)
         public int TicketPrice { get; set; } //цена билета на фестиваль
-        public string RatingFilm { get; set; } //рейтинг фильма
 
         public int GuestsVotes { get; set; } //общее кол-во баллов гостей
         public int GuestsAmount { get; set; } //кол-во баллов гостей
@@ -23,12 +22,11 @@ namespace course_work_FestivalFilmov_Afonin
 
 
 
-        public Film(string nameFilm, string nominationFilm, int ticketPrice, string ratingFilm)
+        public Film(string nameFilm, string nominationFilm, int ticketPrice)
         {
             NameFilm = nameFilm;
             NominationFilm = nominationFilm;
             TicketPrice = ticketPrice;
-            RatingFilm = ratingFilm;
 
             GuestsVotes = 0;
             GuestsAmount = 0;

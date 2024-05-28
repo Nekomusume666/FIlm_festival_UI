@@ -1,24 +1,47 @@
 [
   {
-    "NameJury": "1",
-    "LastNameJury": "ssdas",
+    "NameJury": "Елена",
+    "LastNameJury": "Амерченко",
     "PostJury": "Продюсер",
     "isVoted": true,
     "votes_dict": {
-      "1f": 10,
-      "2f": 10,
-      "t": 10
+      "1+1": 1,
+      "Скуфиксы": 10,
+      "ФЫВА": 10
     }
   },
   {
-    "NameJury": "2",
-    "LastNameJury": "eqwewq",
+    "NameJury": "Никита",
+    "LastNameJury": "Самошин",
+    "PostJury": "Актёр",
+    "isVoted": true,
+    "votes_dict": {
+      "1+1": 2,
+      "Скуфиксы": 3,
+      "ФЫВА": 5
+    }
+  },
+  {
+    "NameJury": "Мария",
+    "LastNameJury": "Митихина",
     "PostJury": "Режисёр",
     "isVoted": true,
     "votes_dict": {
-      "1f": 5,
-      "2f": 4,
-      "t": 2
+      "1+1": 10,
+      "Скуфиксы": 7,
+      "ФЫВА": 2
+    }
+  },
+  {
+    "NameJury": "sdfghjk",
+    "LastNameJury": "zxcvbn",
+    "PostJury": "Режисёр",
+    "isVoted": true,
+    "votes_dict": {
+      "1+1": 7,
+      "Скуфиксы": 9,
+      "ФЫВА": 2,
+      "sadsd": 7
     }
   }
 ]

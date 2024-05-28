@@ -62,7 +62,6 @@ namespace FIlm_festival_UI
                         film_dataGridView.Rows[numbersFilm].Cells[0].Value = film.NameFilm;
                         film_dataGridView.Rows[numbersFilm].Cells[1].Value = film.NominationFilm;
                         film_dataGridView.Rows[numbersFilm].Cells[2].Value = film.TicketPrice;
-                        film_dataGridView.Rows[numbersFilm].Cells[3].Value = film.RatingFilm;
                         numbersFilm++;
                     }
             }
@@ -76,15 +75,13 @@ namespace FIlm_festival_UI
             string nameFilmForm = AddFilmForm.NameFilmForm;
             string nominationFilmForm = AddFilmForm.NominationFilmForm;
             int ticketPriceForm = AddFilmForm.TicketPriceForm;
-            string ratingFilmForm = AddFilmForm.RatingFilmForm;
 
             Film newFilm = new Film(nameFilmForm,
-                nominationFilmForm, ticketPriceForm, ratingFilmForm);
+                nominationFilmForm, ticketPriceForm);
 
             if (!string.IsNullOrEmpty(nameFilmForm) &&
                 !string.IsNullOrEmpty(nominationFilmForm) &&
-                (ticketPriceForm > 0) &&
-                !string.IsNullOrEmpty(ratingFilmForm))
+                (ticketPriceForm > 0))
             {
                 var films = await ReadFromFile<Film>(FileFilm);
 
@@ -94,8 +91,7 @@ namespace FIlm_festival_UI
                     {
                         if (twoFilms.NameFilm == nameFilmForm &&
                             twoFilms.NominationFilm == nominationFilmForm &&
-                            twoFilms.TicketPrice == ticketPriceForm &&
-                            twoFilms.RatingFilm == ratingFilmForm)
+                            twoFilms.TicketPrice == ticketPriceForm)
                         {
                             MessageBox.Show($"Фильм {twoFilms.NameFilm} уже занесён в базу " +
                                 $"Фестиваль фильмов. ", "Добавление фильма", 0,
@@ -110,15 +106,13 @@ namespace FIlm_festival_UI
 
                     await WriteToFile(films, FileFilm);
 
-                    film_dataGridView.Rows.Add(nameFilmForm, nominationFilmForm, ticketPriceForm,
-                              ratingFilmForm);
+                    film_dataGridView.Rows.Add(nameFilmForm, nominationFilmForm, ticketPriceForm);
                     MessageBox.Show($"Фильм {nameFilmForm} успешно добавлен в базу " +
                                 $"Фестиваль фильмов. ", "Добавление фильма", 0,
                                 MessageBoxIcon.Information);
                     AddFilmForm.NameFilmForm = "";
                     AddFilmForm.NominationFilmForm = "";
                     AddFilmForm.TicketPriceForm = 0;
-                    AddFilmForm.RatingFilmForm = "";
 
                 }
                 else
@@ -138,41 +132,37 @@ namespace FIlm_festival_UI
             string name = selectedRow.Cells[0].Value.ToString();
             string nomination = selectedRow.Cells[1].Value.ToString();
             int ticketPrice = Convert.ToInt32(selectedRow.Cells[2].Value);
-            string rating = selectedRow.Cells[3].Value.ToString();
 
-            ChangeFilmForm formFilm = new ChangeFilmForm(name, nomination, ticketPrice, rating);
+            ChangeFilmForm formFilm = new ChangeFilmForm(name, nomination, ticketPrice);
             formFilm.ShowDialog();
 
             string nameFilmForm = ChangeFilmForm.NameFilmForm;
             string nominationFilmForm = ChangeFilmForm.NominationFilmForm;
             int ticketPriceForm = ChangeFilmForm.TicketPriceForm;
-            string ratingFilmForm = ChangeFilmForm.RatingFilmForm;
 
             Film modifiedFilm = new Film(nameFilmForm,
-                nominationFilmForm, ticketPriceForm, ratingFilmForm);
+                nominationFilmForm, ticketPriceForm);
 
             var films = await ReadFromFile<Film>(FileFilm);
 
             foreach (var f in films)
             {
                 if (name == f.NameFilm && nomination == f.NominationFilm
-                    && ticketPrice == f.TicketPrice && rating == f.RatingFilm)
+                    && ticketPrice == f.TicketPrice)
                 {
-                    if (!(nameFilmForm.Equals(name) && nominationFilmForm.Equals(nomination) && ticketPriceForm == ticketPrice && ratingFilmForm.Equals(rating)))
+                    if (!(nameFilmForm.Equals(name) && nominationFilmForm.Equals(nomination) && ticketPriceForm == ticketPrice))
                     {
                         films.Remove(f);
                         films.Add(modifiedFilm);
                         selectedRow.Cells[0].Value = nameFilmForm;
                         selectedRow.Cells[1].Value = nominationFilmForm;
                         selectedRow.Cells[2].Value = ticketPriceForm;
-                        selectedRow.Cells[3].Value = ratingFilmForm;
                         film_dataGridView.Refresh();
                         MessageBox.Show($"Фильм {f.NameFilm}  изменён!", "Изменение фильма", 0,
                             MessageBoxIcon.Information);
                         ChangeFilmForm.NameFilmForm = "";
                         ChangeFilmForm.NominationFilmForm = "";
                         ChangeFilmForm.TicketPriceForm = 0;
-                        ChangeFilmForm.RatingFilmForm = "";
                         break;
                     }
                     else
@@ -213,12 +203,11 @@ namespace FIlm_festival_UI
                 string nameFilm = film_dataGridView.Rows[selectCount].Cells[0].Value.ToString();
                 string nominationFilm = film_dataGridView.Rows[selectCount].Cells[1].Value.ToString();
                 int ticketPrice = Convert.ToInt32(film_dataGridView.Rows[selectCount].Cells[2].Value.ToString());
-                string ratingFilm = film_dataGridView.Rows[selectCount].Cells[3].Value.ToString(); ;
 
                 foreach (var f in films)
                 {
                     if (nameFilm == f.NameFilm && nominationFilm == f.NominationFilm
-                        && ticketPrice == f.TicketPrice && ratingFilm == f.RatingFilm)
+                        && ticketPrice == f.TicketPrice)
                     {
                         films.Remove(f);
                         countFilm = films.Count;
