@@ -1,4 +1,6 @@
 ﻿using course_work_FestivalFilmov_Afonin;
+using FIlm_festival_UI.GuestForms;
+using FIlm_festival_UI.JuryForms;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -44,7 +46,7 @@ namespace FIlm_festival_UI
         }
         private void film_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private async void btn_add_film_Click(object sender, EventArgs e)
@@ -54,8 +56,11 @@ namespace FIlm_festival_UI
             string nameJuryForm = AddJuryForm.NameJuryForm;
             string lastNameJuryForm = AddJuryForm.LastNameJuryForm;
             string postJuryForm = AddJuryForm.PostJuryForm;
+            bool vote = false;
+            Dictionary<string, int> dict = new Dictionary<string, int>();
 
-            Jury newJury = new Jury(nameJuryForm, lastNameJuryForm, postJuryForm);
+
+            Jury newJury = new Jury(nameJuryForm, lastNameJuryForm, postJuryForm, vote, dict);
 
             if (!string.IsNullOrEmpty(nameJuryForm) &&
                 !string.IsNullOrEmpty(lastNameJuryForm) &&
@@ -120,6 +125,10 @@ namespace FIlm_festival_UI
                         dataGridView.Rows[numbersJury].Cells[0].Value = jurys.NameJury;
                         dataGridView.Rows[numbersJury].Cells[1].Value = jurys.LastNameJury;
                         dataGridView.Rows[numbersJury].Cells[2].Value = jurys.PostJury;
+
+                        if (jurys.isVoted) dataGridView.Rows[numbersJury].Cells[3].Value = "+";
+                        else dataGridView.Rows[numbersJury].Cells[3].Value = "-";
+
                         numbersJury++;
                     }
             }
@@ -240,9 +249,13 @@ namespace FIlm_festival_UI
             string modName = ChangeJuryForm.NameJuryForm;
             string modSurname = ChangeJuryForm.LastNameJuryForm;
             string modPost = ChangeJuryForm.PostJuryForm;
+            bool vote;
+            if (selectedRow.Cells[4].Value.Equals("+")) vote = true;
+            else vote = false;
+            Dictionary<string, int> dict = new Dictionary<string, int>();
 
             Jury modifiedJury = new Jury(modName,
-                modSurname, modPost);
+                modSurname, modPost, vote, dict);
 
             var jurys = await ReadFromFile<Jury>(FileJury);
 
@@ -274,6 +287,33 @@ namespace FIlm_festival_UI
                 }
             }
             await WriteToFile(jurys, FileJury);
+        }
+
+        private async void btn_voting_Click(object sender, EventArgs e)
+        {
+            if (dataGridView.SelectedRows.Count > 0)
+            {
+                string curValue = dataGridView.CurrentRow.Cells[0].Value.ToString();
+
+                var jurys = await ReadFromFile<Jury>(FileJury);
+
+                foreach (var jury in jurys)
+                {
+                    if (jury.NameJury.Equals(curValue))
+                    {
+                        VotingJuryForm votingGuestForm = new VotingJuryForm(jury);
+                        votingGuestForm.ShowDialog();
+
+                        if (jury.isVoted) dataGridView.CurrentRow.Cells[3].Value = "+";
+                        else dataGridView.CurrentRow.Cells[3].Value = "-";
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Необходимо выбрать гостя!");
+            }
         }
     }
 }

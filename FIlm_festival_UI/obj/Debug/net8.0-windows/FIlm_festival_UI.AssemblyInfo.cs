@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FIlm_festival_UI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7dddb5a813635869d96dab7fe5e62db8b1dd51e8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6176c80a79a391271bafb36bba5e85c3ac40813f")]
 [assembly: System.Reflection.AssemblyProductAttribute("FIlm_festival_UI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FIlm_festival_UI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

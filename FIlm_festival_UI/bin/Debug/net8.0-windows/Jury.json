@@ -1,0 +1,24 @@
+[
+  {
+    "NameJury": "1",
+    "LastNameJury": "ssdas",
+    "PostJury": "Продюсер",
+    "isVoted": true,
+    "votes_dict": {
+      "1f": 10,
+      "2f": 10,
+      "t": 10
+    }
+  },
+  {
+    "NameJury": "2",
+    "LastNameJury": "eqwewq",
+    "PostJury": "Режисёр",
+    "isVoted": true,
+    "votes_dict": {
+      "1f": 5,
+      "2f": 4,
+      "t": 2
+    }
+  }
+]

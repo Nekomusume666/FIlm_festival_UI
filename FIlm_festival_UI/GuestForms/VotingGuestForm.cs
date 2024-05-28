@@ -224,30 +224,28 @@ namespace FIlm_festival_UI.GuestForms
             }
             await WriteToFile(tableOfFilms, FileFilm);
 
-            Console.WriteLine("debug");
-
+            // Обновление голосов текущего гостя
             curGuest.votes_dict.Clear();
             for (int i = 0; i < dataGridView.RowCount; i++)
             {
-                curGuest.votes_dict.Add(dataGridView.Rows[i].Cells[0].Value.ToString(), Int32.Parse(dataGridView.Rows[i].Cells[1].Value.ToString()));
+                curGuest.votes_dict.Add(dataGridView.Rows[i].Cells[0].Value.ToString(), int.Parse(dataGridView.Rows[i].Cells[1].Value.ToString()));
             }
-            // Чтение JSON-файла
+            curGuest.isVoted = true;
+
+            // Чтение JSON-файла с гостями
             var json = File.ReadAllText(FileGuest);
             var guests = JsonConvert.DeserializeObject<List<Guests>>(json);
 
-            // Поиск гостя по email
+            // Поиск гостя по имени
             var guest = guests.Find(g => g.NameGuest == curGuest.NameGuest);
             if (guest != null)
             {
                 // Обновление информации о госте
-                Core.DictionaryExtensions.AddRange(guest.votes_dict, curGuest.votes_dict);
-                UpdateGuestInfo(FileGuest, curGuest.NameGuest, guest =>
-                {
-                    guest.NameGuest = curGuest.NameGuest;
-                    guest.LastNameGuest = curGuest.LastNameGuest;
-                    guest.SeatNumberGuest = curGuest.SeatNumberGuest;
-                    guest.isVoted = true;
-                });
+                guest.votes_dict = new Dictionary<string, int>(curGuest.votes_dict);
+                guest.isVoted = curGuest.isVoted;
+                guest.NameGuest = curGuest.NameGuest;
+                guest.LastNameGuest = curGuest.LastNameGuest;
+                guest.SeatNumberGuest = curGuest.SeatNumberGuest;
 
                 // Сохранение обновленного списка гостей обратно в JSON-файл
                 var updatedJson = JsonConvert.SerializeObject(guests, Formatting.Indented);
@@ -264,7 +262,7 @@ namespace FIlm_festival_UI.GuestForms
             var json = File.ReadAllText(filePath);
             var guests = JsonConvert.DeserializeObject<List<Guests>>(json);
 
-            // Поиск гостя по email
+            // Поиск гостя по имени
             var guest = guests.Find(g => g.NameGuest == name);
             if (guest != null)
             {

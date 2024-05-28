@@ -31,6 +31,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             nav_bar_panel = new Panel();
+            btn_voting = new Button();
             filter_panel = new Panel();
             label_filter = new Label();
             textBox_filter = new TextBox();
@@ -44,7 +45,7 @@
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
-            btn_voting = new Button();
+            VoteColumn = new DataGridViewTextBoxColumn();
             nav_bar_panel.SuspendLayout();
             filter_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
@@ -66,6 +67,22 @@
             nav_bar_panel.Name = "nav_bar_panel";
             nav_bar_panel.Size = new Size(996, 144);
             nav_bar_panel.TabIndex = 7;
+            // 
+            // btn_voting
+            // 
+            btn_voting.BackColor = Color.FromArgb(0, 0, 192);
+            btn_voting.FlatAppearance.BorderColor = Color.FromArgb(11, 16, 12);
+            btn_voting.FlatStyle = FlatStyle.Flat;
+            btn_voting.Font = new Font("Nirmala UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_voting.ForeColor = Color.White;
+            btn_voting.Location = new Point(438, 49);
+            btn_voting.Name = "btn_voting";
+            btn_voting.Size = new Size(238, 42);
+            btn_voting.TabIndex = 12;
+            btn_voting.Text = "Голосование";
+            btn_voting.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btn_voting.UseVisualStyleBackColor = false;
+            btn_voting.Click += btn_voting_Click;
             // 
             // filter_panel
             // 
@@ -106,7 +123,7 @@
             comboBox_filter.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_filter.Font = new Font("Nirmala UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox_filter.FormattingEnabled = true;
-            comboBox_filter.Items.AddRange(new object[] { "имени члена жюри", "фамилии члена жюри", "должности члена жюри" });
+            comboBox_filter.Items.AddRange(new object[] { "имени члена жюри", "фамилии члена жюри", "должности члена жюри", "отметке о голосовании" });
             comboBox_filter.Location = new Point(219, 7);
             comboBox_filter.Name = "comboBox_filter";
             comboBox_filter.Size = new Size(186, 31);
@@ -196,7 +213,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3 });
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, VoteColumn });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(11, 16, 12);
             dataGridViewCellStyle2.Font = new Font("Nirmala UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -241,20 +258,12 @@
             Column3.Name = "Column3";
             Column3.ReadOnly = true;
             // 
-            // btn_voting
+            // VoteColumn
             // 
-            btn_voting.BackColor = Color.FromArgb(0, 0, 192);
-            btn_voting.FlatAppearance.BorderColor = Color.FromArgb(11, 16, 12);
-            btn_voting.FlatStyle = FlatStyle.Flat;
-            btn_voting.Font = new Font("Nirmala UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_voting.ForeColor = Color.White;
-            btn_voting.Location = new Point(438, 49);
-            btn_voting.Name = "btn_voting";
-            btn_voting.Size = new Size(238, 42);
-            btn_voting.TabIndex = 12;
-            btn_voting.Text = "Голосование";
-            btn_voting.TextImageRelation = TextImageRelation.TextBeforeImage;
-            btn_voting.UseVisualStyleBackColor = false;
+            VoteColumn.HeaderText = "Проголосовал?";
+            VoteColumn.MinimumWidth = 6;
+            VoteColumn.Name = "VoteColumn";
+            VoteColumn.ReadOnly = true;
             // 
             // JuryAccountingForm
             // 
@@ -289,9 +298,10 @@
         private Panel panel_green;
         private Label Title_of_current_page;
         private DataGridView dataGridView;
+        private Button btn_voting;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
-        private Button btn_voting;
+        private DataGridViewTextBoxColumn VoteColumn;
     }
 }

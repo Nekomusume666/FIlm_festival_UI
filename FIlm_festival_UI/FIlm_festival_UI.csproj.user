@@ -25,6 +25,9 @@
     <Compile Update="FilmForms\FIlmАccountingForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="JuryForms\VotingJuryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ResultsForm.cs">
       <SubType>Form</SubType>
     </Compile>

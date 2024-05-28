@@ -3,36 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\source\\repos\\FIlm_festival_UI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2511EAD9-8E71-4587-B8D1-DA407532D1F8}|FIlm_festival_UI\\FIlm_festival_UI.csproj|c:\\users\\admin\\source\\repos\\film_festival_ui\\film_festival_ui\\guestforms\\votingguestform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2511EAD9-8E71-4587-B8D1-DA407532D1F8}|FIlm_festival_UI\\FIlm_festival_UI.csproj|solutionrelative:film_festival_ui\\guestforms\\votingguestform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2511EAD9-8E71-4587-B8D1-DA407532D1F8}|FIlm_festival_UI\\FIlm_festival_UI.csproj|c:\\users\\admin\\source\\repos\\film_festival_ui\\film_festival_ui\\resultsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2511EAD9-8E71-4587-B8D1-DA407532D1F8}|FIlm_festival_UI\\FIlm_festival_UI.csproj|solutionrelative:film_festival_ui\\resultsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2511EAD9-8E71-4587-B8D1-DA407532D1F8}|FIlm_festival_UI\\FIlm_festival_UI.csproj|c:\\users\\admin\\source\\repos\\film_festival_ui\\film_festival_ui\\guestforms\\votingguestform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2511EAD9-8E71-4587-B8D1-DA407532D1F8}|FIlm_festival_UI\\FIlm_festival_UI.csproj|solutionrelative:film_festival_ui\\guestforms\\votingguestform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2511EAD9-8E71-4587-B8D1-DA407532D1F8}|FIlm_festival_UI\\FIlm_festival_UI.csproj|c:\\users\\admin\\source\\repos\\film_festival_ui\\film_festival_ui\\core\\dictionaryextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2511EAD9-8E71-4587-B8D1-DA407532D1F8}|FIlm_festival_UI\\FIlm_festival_UI.csproj|solutionrelative:film_festival_ui\\core\\dictionaryextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2511EAD9-8E71-4587-B8D1-DA407532D1F8}|FIlm_festival_UI\\FIlm_festival_UI.csproj|c:\\users\\admin\\source\\repos\\film_festival_ui\\film_festival_ui\\guestforms\\guestsaccountingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2511EAD9-8E71-4587-B8D1-DA407532D1F8}|FIlm_festival_UI\\FIlm_festival_UI.csproj|solutionrelative:film_festival_ui\\guestforms\\guestsaccountingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2511EAD9-8E71-4587-B8D1-DA407532D1F8}|FIlm_festival_UI\\FIlm_festival_UI.csproj|c:\\users\\admin\\source\\repos\\film_festival_ui\\film_festival_ui\\guestforms\\guestsaccountingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2511EAD9-8E71-4587-B8D1-DA407532D1F8}|FIlm_festival_UI\\FIlm_festival_UI.csproj|solutionrelative:film_festival_ui\\guestforms\\guestsaccountingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2511EAD9-8E71-4587-B8D1-DA407532D1F8}|FIlm_festival_UI\\FIlm_festival_UI.csproj|c:\\users\\admin\\source\\repos\\film_festival_ui\\film_festival_ui\\core\\models\\guests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2511EAD9-8E71-4587-B8D1-DA407532D1F8}|FIlm_festival_UI\\FIlm_festival_UI.csproj|solutionrelative:film_festival_ui\\core\\models\\guests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2511EAD9-8E71-4587-B8D1-DA407532D1F8}|FIlm_festival_UI\\FIlm_festival_UI.csproj|c:\\users\\admin\\source\\repos\\film_festival_ui\\film_festival_ui\\filmforms\\film\u0430ccountingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2511EAD9-8E71-4587-B8D1-DA407532D1F8}|FIlm_festival_UI\\FIlm_festival_UI.csproj|solutionrelative:film_festival_ui\\filmforms\\film\u0430ccountingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2511EAD9-8E71-4587-B8D1-DA407532D1F8}|FIlm_festival_UI\\FIlm_festival_UI.csproj|c:\\users\\admin\\source\\repos\\film_festival_ui\\film_festival_ui\\core\\models\\film.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2511EAD9-8E71-4587-B8D1-DA407532D1F8}|FIlm_festival_UI\\FIlm_festival_UI.csproj|solutionrelative:film_festival_ui\\core\\models\\film.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2511EAD9-8E71-4587-B8D1-DA407532D1F8}|FIlm_festival_UI\\FIlm_festival_UI.csproj|c:\\users\\admin\\source\\repos\\film_festival_ui\\film_festival_ui\\resultsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2511EAD9-8E71-4587-B8D1-DA407532D1F8}|FIlm_festival_UI\\FIlm_festival_UI.csproj|solutionrelative:film_festival_ui\\resultsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,105 +38,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DictionaryExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\FIlm_festival_UI\\FIlm_festival_UI\\Core\\DictionaryExtensions.cs",
-              "RelativeDocumentMoniker": "FIlm_festival_UI\\Core\\DictionaryExtensions.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\FIlm_festival_UI\\FIlm_festival_UI\\Core\\DictionaryExtensions.cs",
-              "RelativeToolTip": "FIlm_festival_UI\\Core\\DictionaryExtensions.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T19:59:38.655Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "VotingGuestForm.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\FIlm_festival_UI\\FIlm_festival_UI\\GuestForms\\VotingGuestForm.cs",
-              "RelativeDocumentMoniker": "FIlm_festival_UI\\GuestForms\\VotingGuestForm.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\FIlm_festival_UI\\FIlm_festival_UI\\GuestForms\\VotingGuestForm.cs",
-              "RelativeToolTip": "FIlm_festival_UI\\GuestForms\\VotingGuestForm.cs",
-              "ViewState": "AQIAAM8AAAAAAAAAAAAowNMAAAAAAAAA",
+              "Title": "ResultsForm.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\FIlm_festival_UI\\FIlm_festival_UI\\ResultsForm.cs",
+              "RelativeDocumentMoniker": "FIlm_festival_UI\\ResultsForm.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\FIlm_festival_UI\\FIlm_festival_UI\\ResultsForm.cs",
+              "RelativeToolTip": "FIlm_festival_UI\\ResultsForm.cs",
+              "ViewState": "AQIAADcAAAAAAAAAAAAAAJ4AAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T12:45:37.74Z",
+              "WhenOpened": "2024-05-28T03:18:09.067Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "VotingGuestForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\FIlm_festival_UI\\FIlm_festival_UI\\GuestForms\\VotingGuestForm.cs",
-              "RelativeDocumentMoniker": "FIlm_festival_UI\\GuestForms\\VotingGuestForm.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\FIlm_festival_UI\\FIlm_festival_UI\\GuestForms\\VotingGuestForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "RelativeToolTip": "FIlm_festival_UI\\GuestForms\\VotingGuestForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "Title": "ResultsForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\FIlm_festival_UI\\FIlm_festival_UI\\ResultsForm.cs",
+              "RelativeDocumentMoniker": "FIlm_festival_UI\\ResultsForm.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\FIlm_festival_UI\\FIlm_festival_UI\\ResultsForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "RelativeToolTip": "FIlm_festival_UI\\ResultsForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T12:37:40.277Z",
+              "WhenOpened": "2024-05-28T03:18:00.461Z",
               "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Guests.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\FIlm_festival_UI\\FIlm_festival_UI\\Core\\Models\\Guests.cs",
-              "RelativeDocumentMoniker": "FIlm_festival_UI\\Core\\Models\\Guests.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\FIlm_festival_UI\\FIlm_festival_UI\\Core\\Models\\Guests.cs",
-              "RelativeToolTip": "FIlm_festival_UI\\Core\\Models\\Guests.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T12:30:22.715Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GuestsAccountingForm.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\FIlm_festival_UI\\FIlm_festival_UI\\GuestForms\\GuestsAccountingForm.cs",
-              "RelativeDocumentMoniker": "FIlm_festival_UI\\GuestForms\\GuestsAccountingForm.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\FIlm_festival_UI\\FIlm_festival_UI\\GuestForms\\GuestsAccountingForm.cs*",
-              "RelativeToolTip": "FIlm_festival_UI\\GuestForms\\GuestsAccountingForm.cs*",
-              "ViewState": "AQIAAB4BAAAAAAAAAAAawDwAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T09:40:01.941Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Film.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\FIlm_festival_UI\\FIlm_festival_UI\\Core\\Models\\Film.cs",
-              "RelativeDocumentMoniker": "FIlm_festival_UI\\Core\\Models\\Film.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\FIlm_festival_UI\\FIlm_festival_UI\\Core\\Models\\Film.cs",
-              "RelativeToolTip": "FIlm_festival_UI\\Core\\Models\\Film.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T09:44:23.167Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GuestsAccountingForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\FIlm_festival_UI\\FIlm_festival_UI\\GuestForms\\GuestsAccountingForm.cs",
-              "RelativeDocumentMoniker": "FIlm_festival_UI\\GuestForms\\GuestsAccountingForm.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\FIlm_festival_UI\\FIlm_festival_UI\\GuestForms\\GuestsAccountingForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]*",
-              "RelativeToolTip": "FIlm_festival_UI\\GuestForms\\GuestsAccountingForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T09:22:17.589Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "FIlm\u0410ccountingForm.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\FIlm_festival_UI\\FIlm_festival_UI\\FilmForms\\FIlm\u0410ccountingForm.cs",
-              "RelativeDocumentMoniker": "FIlm_festival_UI\\FilmForms\\FIlm\u0410ccountingForm.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\FIlm_festival_UI\\FIlm_festival_UI\\FilmForms\\FIlm\u0410ccountingForm.cs",
-              "RelativeToolTip": "FIlm_festival_UI\\FilmForms\\FIlm\u0410ccountingForm.cs",
-              "ViewState": "AQIAABsBAAAAAAAAAAAqwDEBAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T14:43:03.372Z",
-              "EditorCaption": ""
             }
           ]
         }
